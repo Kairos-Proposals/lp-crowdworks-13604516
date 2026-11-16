@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos ご提案 | Haru-Harumi様 美容Webデザインパートナーシップ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#102A2E;
+    --deep-2:#1B3D3F;
+    --sage:#7FA497;
+    --sage-soft:#B9CFC3;
+    --mist:#EEF3EF;
+    --champagne:#F3E7D8;
+    --rose:#D9A9A0;
+    --ink:#1C2B2A;
+    --ink-soft:#4E6360;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    color:var(--ink);
+    background:var(--mist);
+    line-height:1.85;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.logo{
+    font-family:'Zen Kaku Gothic New',sans-serif;
+  }
+  .en{
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:0.12em;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* ===== HEADER ===== */
+  header.site-head{
+    position:absolute;
+    top:0;left:0;right:0;
+    z-index:10;
+    padding:28px 0;
+  }
+  .site-head .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .logo{
+    color:var(--mist);
+    font-size:1.15rem;
+    font-weight:700;
+    letter-spacing:0.08em;
+  }
+  .logo span{color:var(--rose);}
+  .site-head nav a{
+    color:var(--mist);
+    font-size:0.82rem;
+    margin-left:28px;
+    opacity:0.85;
+    letter-spacing:0.05em;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 18% 20%, rgba(217,169,160,0.25), transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(127,164,151,0.3), transparent 50%),
+      linear-gradient(160deg, var(--deep) 0%, var(--deep-2) 55%, #0C2224 100%);
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    width:480px;height:480px;
+    right:-140px;top:-120px;
+    background:radial-gradient(circle at 30% 30%, rgba(243,231,216,0.5), rgba(217,169,160,0.08) 60%, transparent 70%);
+    border-radius:50%;
+    filter:blur(2px);
+  }
+  .drop{
+    position:absolute;
+    width:220px;height:220px;
+    background:linear-gradient(135deg, rgba(243,231,216,0.9), rgba(127,164,151,0.5));
+    border-radius:50% 50% 50% 0;
+    transform:rotate(45deg);
+    bottom:-60px;
+    left:8%;
+    opacity:0.5;
+    filter:blur(1px);
+  }
+  .drop.small{
+    width:90px;height:90px;
+    left:unset;right:12%;
+    top:18%;
+    bottom:unset;
+    opacity:0.35;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    padding-top:90px;
+  }
+  .hero-tag{
+    display:inline-block;
+    color:var(--champagne);
+    font-size:0.78rem;
+    letter-spacing:0.25em;
+    border:1px solid rgba(243,231,216,0.4);
+    padding:7px 18px;
+    border-radius:999px;
+    margin-bottom:28px;
+  }
+  .hero h1{
+    color:#FBF8F4;
+    font-size:clamp(2rem, 5.4vw, 3.6rem);
+    font-weight:900;
+    line-height:1.5;
+    margin-bottom:28px;
+    letter-spacing:0.02em;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--rose);
+  }
+  .hero p.lead{
+    color:var(--sage-soft);
+    font-size:1.02rem;
+    max-width:560px;
+    margin-bottom:44px;
+    font-weight:300;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--rose);
+    color:#1C2B2A;
+    font-weight:700;
+    padding:16px 34px;
+    border-radius:999px;
+    font-size:0.95rem;
+    letter-spacing:0.05em;
+    transition:transform .25s ease, box-shadow .25s ease;
+    box-shadow:0 10px 30px rgba(217,169,160,0.25);
+  }
+  .btn:hover{transform:translateY(-3px);}
+  .btn.ghost{
+    background:transparent;
+    border:1px solid rgba(238,243,239,0.5);
+    color:#EEF3EF;
+    box-shadow:none;
+  }
+  .scroll-note{
+    position:absolute;
+    bottom:30px;left:24px;
+    color:rgba(238,243,239,0.6);
+    font-size:0.72rem;
+    letter-spacing:0.2em;
+  }
+
+  /* ===== SECTION COMMON ===== */
+  section{padding:110px 0;}
+  .eyebrow{
+    font-size:0.78rem;
+    letter-spacing:0.3em;
+    color:var(--sage);
+    font-weight:700;
+    margin-bottom:16px;
+    display:block;
+  }
+  .sec-title{
+    font-size:clamp(1.5rem, 3.4vw, 2.2rem);
+    font-weight:700;
+    margin-bottom:28px;
+    color:var(--ink);
+  }
+  .sec-title .accent{color:var(--rose);}
+
+  /* ===== UNDERSTANDING ===== */
+  .understand{
+    background:var(--mist);
+    position:relative;
+  }
+  .understand-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:60px;
+    align-items:start;
+  }
+  .understand p.desc{
+    color:var(--ink-soft);
+    font-size:0.98rem;
+    margin-bottom:20px;
+  }
+  .quote-box{
+    background:#fff;
+    border-left:4px solid var(--rose);
+    padding:28px 30px;
+    border-radius:4px;
+    font-size:0.95rem;
+    color:var(--ink);
+    box-shadow:0 10px 30px rgba(16,42,46,0.06);
+  }
+  .point-cards{
+    display:grid;
+    gap:16px;
+  }
+  .point-card{
+    background:#fff;
+    border-radius:14px;
+    padding:22px 24px;
+    box-shadow:0 8px 24px rgba(16,42,46,0.06);
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .point-num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.6rem;
+    color:var(--rose);
+    font-weight:600;
+    line-height:1;
+    flex-shrink:0;
+  }
+  .point-card h3{
+    font-size:0.98rem;
+    margin-bottom:6px;
+  }
+  .point-card p{
+    color:var(--ink-soft);
+    font-size:0.86rem;
+  }
+
+  /* ===== VALUE CARDS ===== */
+  .value{
+    background:linear-gradient(180deg, #FFFFFF 0%, var(--champagne) 100%);
+  }
+  .value-head{text-align:center;max-width:640px;margin:0 auto 60px;}
+  .value-head .sec-title{margin-bottom:14px;}
+  .value-head p{color:var(--ink-soft);font-size:0.95rem;}
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .value-card{
+    background:#fff;
+    border-radius:18px;
+    padding:36px 28px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 14px 34px rgba(16,42,46,0.08);
+    transition:transform .3s ease;
+  }
+  .value-card:hover{transform:translateY(-6px);}
+  .value-card::after{
+    content:"";
+    position:absolute;
+    width:120px;height:120px;
+    background:radial-gradient(circle, rgba(127,164,151,0.18), transparent 70%);
+    border-radius:50%;
+    top:-40px;right:-40px;
+  }
+  .value-icon{
+    width:50px;height:50px;
+    border-radius:50% 50% 50% 0;
+    background:linear-gradient(135deg, var(--sage), var(--rose));
+    margin-bottom:22px;
+  }
+  .value-card h3{
+    font-size:1.05rem;
+    margin-bottom:12px;
+    position:relative;
+    z-index:1;
+  }
+  .value-card p{
+    font-size:0.86rem;
+    color:var(--ink-soft);
+    position:relative;
+    z-index:1;
+  }
+  .value-grid .value-card:nth-child(4),
+  .value-grid .value-card:nth-child(5){
+    grid-column:span 1;
+  }
+
+  /* ===== PROCESS ===== */
+  .process{background:var(--deep);color:var(--mist);position:relative;overflow:hidden;}
+  .process::before{
+    content:"";
+    position:absolute;
+    width:600px;height:600px;
+    background:radial-gradient(circle, rgba(127,164,151,0.12), transparent 65%);
+    top:-200px;left:-200px;
+    border-radius:50%;
+  }
+  .process .eyebrow{color:var(--rose);}
+  .process .sec-title{color:#FBF8F4;}
+  .timeline{
+    position:relative;
+    margin-top:60px;
+    padding-left:30px;
+    border-left:1px solid rgba(238,243,239,0.25);
+  }
+  .tl-item{
+    position:relative;
+    padding-bottom:50px;
+  }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-37px;top:2px;
+    width:14px;height:14px;
+    border-radius:50%;
+    background:var(--rose);
+    box-shadow:0 0 0 5px rgba(217,169,160,0.15);
+  }
+  .tl-step{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--sage-soft);
+    font-size:0.85rem;
+    letter-spacing:0.15em;
+    margin-bottom:6px;
+    display:block;
+  }
+  .tl-item h3{
+    font-size:1.1rem;
+    margin-bottom:10px;
+    color:#FBF8F4;
+  }
+  .tl-item p{
+    color:rgba(238,243,239,0.75);
+    font-size:0.9rem;
+    max-width:560px;
+  }
+
+  /* ===== CLOSING ===== */
+  .closing{
+    background:linear-gradient(135deg, var(--champagne), #fff);
+    text-align:center;
+    position:relative;
+  }
+  .closing .drop{
+    position:absolute;
+    width:160px;height:160px;
+    background:linear-gradient(135deg, rgba(127,164,151,0.4), rgba(217,169,160,0.4));
+    border-radius:50% 50% 50% 0;
+    transform:rotate(45deg);
+    top:-40px;right:8%;
+    opacity:0.6;
+  }
+  .closing-inner{
+    max-width:640px;
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .closing .eyebrow{text-align:center;}
+  .closing h2{
+    font-size:clamp(1.6rem,4vw,2.4rem);
+    margin-bottom:22px;
+    font-weight:700;
+  }
+  .closing p{
+    color:var(--ink-soft);
+    margin-bottom:38px;
+    font-size:0.98rem;
+  }
+  .closing .btn{
+    background:var(--deep);
+    color:#fff;
+    box-shadow:0 14px 30px rgba(16,42,46,0.22);
+  }
+  .foot-meta{
+    margin-top:50px;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    letter-spacing:0.05em;
+  }
+  footer{
+    background:var(--deep);
+    color:rgba(238,243,239,0.5);
+    text-align:center;
+    padding:30px 0;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+  }
+
+  @media (max-width:860px){
+    .understand-grid{grid-template-columns:1fr;gap:40px;}
+    .value-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    section{padding:76px 0;}
+    .value-grid{grid-template-columns:1fr;}
+    .site-head nav{display:none;}
+    .hero-inner{padding-top:60px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="logo">Kairos<span>.</span></div>
+    <nav>
+      <a href="#understand">理解</a>
+      <a href="#value">提供価値</a>
+      <a href="#process">進め方</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="drop"></div>
+  <div class="drop small"></div>
+  <div class="wrap hero-inner">
+    <span class="hero-tag en">PROPOSAL FOR Haru-Harumi</span>
+    <h1>肌がよろこぶ言葉を、<br><em>見た目の説得力</em>に変える。</h1>
+    <p class="lead">美容・コスメ・スキンケアという「信頼が可視化されにくい」領域だからこそ、一枚のデザインが読者の安心と購買を左右します。Kairosは、Haru-Harumi様が発信する20代向け美容コンテンツに、継続して伴走できるデザインパートナーでありたいと考え、本提案をお送りします。</p>
+    <a href="#contact" class="btn">ご相談・ヒアリングを依頼する →</a>
+  </div>
+  <div class="scroll-note en">SCROLL ↓</div>
+</section>
+
+<section class="understand" id="understand">
+  <div class="wrap">
+    <span class="eyebrow">UNDERSTANDING / 募集内容への理解</span>
+    <h2 class="sec-title">「かわいい」だけでは、<br class="mobile-br">選ばれ続けない時代。</h2>
+    <div class="understand-grid">
+      <div>
+        <p class="desc">今回の募集を拝見し、Haru-Harumi様が目指しているのは単なる「映える美容デザイン」ではなく、<strong>20代〜30代という、情報の見極めにシビアな世代に対する「信頼されるビジュアル設計」</strong>だと理解しています。LP、メディアページ、商品紹介、キャンペーン、サロンページ——媒体は違っても、共通して求められているのは「清潔感」「トレンド感」「上品さ」「かわいらしさ」という、一見バランスの難しい要素の共存です。</p>
+        <p class="desc">さらに継続前提・Figma/Canva運用・スピード納品という条件からは、単発のデザイナーではなく、<strong>ブランドの温度感を理解して並走できるチーム</strong>を求めていらっしゃることが伝わってきます。</p>
+        <div class="quote-box">
+          「美容が好き」「デザインに挑戦したい」という想いを大切にされている募集文から、<br>
+          Kairosは<strong>技術力だけでなく、美容という世界観への共感</strong>を強みとしてお応えしたいと考えています。
+        </div>
+      </div>
+      <div class="point-cards">
+        <div class="point-card">
+          <span class="point-num en">01</span>
+          <div><h3>媒体の多様性への対応</h3><p>LP／メディア／商品紹介／キャンペーン／サロンページと、目的の異なるデザインを一貫したトーンで制作します。</p></div>
+        </div>
+        <div class="point-card">
+          <span class="point-num en">02</span>
+          <div><h3>ターゲット解像度の高さ</h3><p>20代〜30代女性の「今欲しい情報の見せ方」を踏まえ、信頼感と親しみやすさを両立させます。</p></div>
+        </div>
+        <div class="point-card">
+          <span class="point-num en">03</span>
+          <div><h3>継続運用のしやすさ</h3><p>Figma・Canvaでの指定形式納品、修正フローの明確化で、やり取りの負担を最小限にします。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="value" id="value">
+  <div class="wrap">
+    <div class="value-head">
+      <span class="eyebrow">WHAT KAIROS OFFERS</span>
+      <h2 class="sec-title">Kairosが提供できる<span class="accent">5</span>つの価値</h2>
+      <p>単発の制作ではなく、ブランドの成長速度に合わせて伴走できる体制を整えています。</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon"></div>
+        <h3>美容トーンを理解した設計力</h3>
+        <p>「清潔感」「上品さ」「かわいさ」の配分を、ターゲットと媒体ごとに調整したデザインを設計します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,var(--rose),var(--champagne));"></div>
+        <h3>Figma / Canva 両対応</h3>
+        <p>ご指定のツール・形式に合わせて柔軟に制作。既存の運用フローを崩さず導入いただけます。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,var(--sage),var(--sage-soft));"></div>
+        <h3>1〜2週間の安定納期</h3>
+        <p>ご提示の納期目安に合わせたスケジュール管理で、キャンペーンや公開日に確実に間に合わせます。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,var(--champagne),var(--sage));"></div>
+        <h3>継続を前提とした伴走体制</h3>
+        <p>単発対応で終わらせず、ブランドの世界観を蓄積しながら、回を重ねるごとに精度を高めていきます。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,var(--rose),var(--sage));"></div>
+        <h3>小さく試せる柔軟な進行</h3>
+        <p>30,000〜50,000円のご予算感に合わせ、まずは1案件からお試しいただける進め方をご提案します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <span class="eyebrow">HOW WE WORK</span>
+    <h2 class="sec-title">進め方・スケジュールイメージ</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-step en">STEP 01 — Day 1</span>
+        <h3>ヒアリング・資料共有</h3>
+        <p>制作したいページの種類、トンマナ、参考イメージを共有いただきます。既存コンテンツがあれば合わせて拝見します。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-step en">STEP 02 — Day 2-4</span>
+        <h3>構成・ラフ作成</h3>
+        <p>情報設計とレイアウトラフをFigmaまたはCanvaで提示。この段階で方向性のすり合わせを行います。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-step en">STEP 03 — Day 5-9</span>
+        <h3>デザイン制作</h3>
+        <p>配色・写真の見せ方・コピーの配置まで含め、清潔感とトレンド感を両立したデザインに仕上げます。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-step en">STEP 04 — Day 10-12</span>
+        <h3>フィードバック・修正</h3>
+        <p>1〜2回の修正を想定したスケジュールで、認識のズレを丁寧に解消します。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-step en">STEP 05 — Day 13-14</span>
+        <h3>納品・次回のご相談</h3>
+        <p>ご指定形式（Canva / PSD等）で納品。継続いただく場合は、次案件のスケジュールも合わせてご提案します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="contact">
+  <div class="drop"></div>
+  <div class="wrap">
+    <div class="closing-inner">
+      <span class="eyebrow en">LET'S START</span>
+      <h2>まずは1案件、<br>お試しいただけませんか。</h2>
+      <p>Haru-Harumi様が届けたい「美容の魅力」を、Kairosは見た目の説得力というかたちで支えたいと考えています。ご予算感・ご希望の進め方に合わせて柔軟にご提案いたしますので、まずはお気軽にメッセージください。</p>
+      <a href="#" class="btn">Kairosに相談してみる</a>
+      <div class="foot-meta">想定予算 ¥30,000〜¥50,000（継続：1案件 ¥5,000〜、ご相談可）／ 対応ツール：Figma・Canva・PSD</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  KAIROS — Web制作・システム開発チーム ／ This is a proposal page for Haru-Harumi's project.
+</footer>
+
+</body>
+</html>
